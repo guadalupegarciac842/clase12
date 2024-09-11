@@ -7,7 +7,7 @@ app.use(express.static('public'));
 
 app.listen(PORT,() => console.log(`Server running in http://localhost:${PORT}`));
 
-app.get('/', (req,res) => {
+app.get('/home', (req,res) => {
     return res.sendFile(path.join(__dirname,'heroes','views','index.html'))
 });
 
