@@ -3,7 +3,7 @@ const app = express();
 const path = require ('path');
 const PORT = 3000;
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname,'heroes','public')));
 
 app.listen(PORT,() => console.log(`Server running in http://localhost:${PORT}`));
 
@@ -25,6 +25,10 @@ app.get('/clarke', (req,res) => {
 
 app.get('/hamilton', (req,res) => {
     return res.sendFile(path.join(__dirname,'heroes','views','hamilton.html'))
+});
+
+app.get('/hopper', (req,res) => {
+    return res.sendFile(path.join(__dirname,'heroes','views','hopper.html'))
 });
 
 app.get('/lovelace', (req,res) => {
